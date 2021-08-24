@@ -6,10 +6,18 @@ const tick = () => {
   const minutes = now.getMinutes();
   const seconds = now.getSeconds();
 
+  function addZero(param) {
+    if (param < 10) {
+      return `0${param}`;
+    } else {
+      return param;
+    }
+  }
+
   const html = `
-    <span>${hours}</span> :
-    <span>${minutes}</span> :
-    <span>${seconds}</span>
+    <span>${addZero(hours)}</span> :
+    <span>${addZero(minutes)}</span> :
+    <span>${addZero(seconds)}</span>
   `;
 
   clock.innerHTML = html;
